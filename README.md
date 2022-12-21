@@ -1,4 +1,4 @@
-# Triatlón Robótico
+# Triatlón Robótico por Pablo Mileti
 Simulador del Triatlón Robótico de los Torneos Bonaerenses basado en el trabajo de Ricardo Moran y Gonzalo Zabala (CAETI - UAI) para la Roboliga.
 
 En mi caso tomé el simulador de Sumo que ellos crearon para poder diseñar y programar las dos disciplinas restantes del Triatlón Robótico de los Torneos Bonaerenses. Todo esto fue desarrollado para utilizar en la pandemia COVID 2020, sin embargo también sirve para practicar la programación antes de armar un robot.
@@ -18,5 +18,6 @@ Dentro de la carpeta de cada disciplina encontrarán un carpeta llamada ejemplos
 A continuación los links para descargar ambos y el archivo comprimido con las 3 disciplinas:
 
 Webots: https://github.com/cyberbotics/webots/releases/tag/R2021a
+
 Python: https://www.python.org/downloads/release/python-377/
 
