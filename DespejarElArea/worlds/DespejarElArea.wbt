@@ -1,0 +1,355 @@
+#VRML_SIM R2020a utf8
+#Roboliga Sumo World
+#   Created by Ricardo Moran and Gonzalo Zabala (CAETI - UAI) 
+#   Modified by Pablo Mileti
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.9988274071885382 0.04409809216389781 0.019979212109759174 0.8516787472304467
+  position 0.09820144643393527 2.1904712787395244 2.058342366111915
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  contactMaterial "tierra"
+   appearance Parquetry { type "light strip" }
+
+}
+DEF base Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/pista.PNG"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF forma Cylinder {
+        height 0.0001
+        radius 0.75
+        side FALSE
+        subdivision 4
+      }
+    }
+  ]
+  name "base"
+  locked TRUE
+  translationStep 0
+  rotationStep 0
+}
+
+DEF FLAG Solid {
+  translation -0.55014 0.21311 -0.05315
+  rotation 0 1 0 1
+  children [
+    Transform {
+      translation -0.25 0.00 -0.3
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "sojourner/publisher"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.5 0.01
+          }
+        }
+      ]
+    }
+
+  ]
+  name "flag"
+}
+
+
+DEF Rojo MicrobotRL {
+  translation -0.3 0.0217 0.2
+  name "Rojo"
+  controller "robot0Controller"
+
+}
+
+
+DEF CajaRoja MicrobotCajita {
+  translation 0.4 0.0 0
+  name "CajaRoja1"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.06 0.06 0.06
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaRoja MicrobotCajita {
+  translation -0.2 0.0 -0.2
+  name "CajaRoja2"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.06 0.06 0.06
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+
+DEF CajaVerde MicrobotCajita {
+  translation -0.4 0.0 0
+  name "CajaVerde1"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaVerde MicrobotCajita {
+  translation -0.1 0.0 0.1
+  name "CajaVerde2"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaAzul MicrobotCajita {
+  translation 0 0.0 0
+  name "CajaAzul1"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.06 0.06 0.06
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaAzul MicrobotCajita {
+  translation 0 0.0 0.45
+  name "CajaAzul2"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.06 0.06 0.06
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaAzul MicrobotCajita {
+  translation 0.11 0.0 0.21
+  name "CajaAzul3"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.06 0.06 0.06
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+
+DEF CajaAmarilla MicrobotCajita {
+  translation 0.6 0.0 0
+  name "CajaAmarilla1"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.03 0.03 0.03
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaAmarilla MicrobotCajita {
+  translation 0 0.0 0.5
+  name "CajaAmarilla2"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.03 0.03 0.03
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF CajaAmarilla MicrobotCajita {
+  translation 0 0.0 -0.5
+  name "CajaAmarilla3"
+  controller ""
+  extensionSlot [
+    DEF equipo Solid {
+      translation 0 0 0
+      children [
+        DEF placa Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.03 0.03 0.03
+          }
+          isPickable FALSE
+        }
+      ]
+      boundingObject USE placa
+      physics Physics {
+      }
+    }
+  ]
+}
+
+DEF MAINSUPERVISOR Robot {
+  children [
+    Receiver {
+      channel 1
+    }
+  ]
+  controller "MainSupervisor"
+  supervisor TRUE
+  window "MainSupervisorWindow"
+}

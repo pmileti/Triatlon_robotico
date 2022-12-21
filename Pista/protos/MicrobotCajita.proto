@@ -1,0 +1,104 @@
+#VRML_SIM R2020a utf8
+# license: Copyright Cyberbotics Ltd. Licensed for use only with Webots.
+# license url: https://cyberbotics.com/webots_assets_license
+# documentation url: https://www.cyberbotics.com/doc/guide/microbot
+# Basado en BOT120 PICAXE-20X2 Microbot (Revolution Education Ltd.)
+# This small robot is used for education with PICAXE programming tools
+# Modified by Ricardo Moran and Gonzalo Zabala (CAETI - UAI)
+# Modified by Pablo Mileti
+
+
+PROTO MicrobotCajita [
+  field SFVec3f    translation      0 0.0409483 0.685 # Is `Transform.translation`.
+  field SFRotation rotation         0 1 0 0   # Is `Transform.rotation`.
+  field SFString   name            "J1"   # Is `Solid.name`.
+  field SFString   controller      ""     # Is `Robot.controller`.
+  field MFString   controllerArgs  ""         # Is `Robot.controllerArgs`.
+  field SFString   customData      ""         # Is `Robot.customData`.
+  field SFBool     supervisor      FALSE      # Is `Robot.supervisor`.
+  field SFBool     synchronization TRUE       # Is `Robot.synchronization`.
+  field MFNode     extensionSlot   []         # Extends the robot with new nodes in the extension slot.
+  
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+
+    children [
+	  Group {
+        children IS extensionSlot
+      }
+
+
+
+      Transform {
+        translation 0.025 0.003 -0.023
+        children Shape {
+          appearance PBRAppearance {
+            roughness 0.2
+            baseColor 0.9 0.9 0.9
+          }
+        }
+      }
+
+
+    ]
+    name IS name
+    model "BOT120 PICAXE-20X2 Microbot"
+    physics Physics {
+		density -1
+		mass 0.1
+    }
+    
+    boundingObject Group {
+      children [
+        Transform {
+          translation 0 -0.009 -0.03
+          children Capsule {
+            height 0.018
+            radius 0.0036
+          }
+        }
+        Transform {
+          translation 0 0.001 0
+          children [
+            Box {
+              size 0.059 0.0015 0.09
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.0018 0.00725
+          children [
+            Box {
+              size 0.0671 0.0098 0.0307
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.015 0.00725
+          children [
+            Box {
+              size 0.0671 0.015 0.015
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.011 0
+          children [
+            Box {
+              size 0.036 0.0155 0.051
+            }
+          ]
+        }
+      ]
+    }
+
+  }
+}
