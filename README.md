@@ -21,3 +21,35 @@ Webots: https://github.com/cyberbotics/webots/releases/tag/R2021a
 
 Python: https://www.python.org/downloads/release/python-377/
 
+# Despejar el área
+![Despejar el area](https://github.com/pmileti/Triatlon_robotico/blob/main/preview_Despejar.png)
+
+# Velocidad y control
+![Velocidad y control](https://github.com/pmileti/Triatlon_robotico/blob/main/preview_Velocidad.png)
+
+# Sumo
+![Sumo](https://github.com/pmileti/Triatlon_robotico/blob/main/preview_Sumo.png)
+
+# Ejemplos de programación del robot:
+
+```
+#RobotName: Mileti
+from RobotRL import RobotRL
+
+robot = RobotRL()
+robot.setVI(95)
+robot.setVD(100)
+robot.esperar(1.7)
+
+while robot.step():
+	if (robot.getDI()==100 and robot.getDD()==100):  #No detecta nada cerca ninguno de los dos sensores
+		robot.setVI(-50)
+		robot.setVD(50)
+	else:
+		robot.setVI(100)
+		robot.setVD(100)
+		robot.esperar(0.7)
+```
+
+# Reglamento propio basado en el original
+Este es el reglamento con explicación de la ubicación de los sensores del robot para cada disciplina [Reglamento mayo 2021](https://github.com/pmileti/Triatlon_robotico/blob/main/Reglamento%20Triatl%C3%B3n%20Rob%C3%B3tico%20-%20Mayo%202021.pdf)
